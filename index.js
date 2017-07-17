@@ -13,7 +13,7 @@
  **/
 var eventUtil = {
 	/**
-	 * @description 添加句柄
+	 * @description 添加事件
 	 * @param {element} 添加事件的元素
 	 * @param {type} 事件类型
 	 * @param {handler} 绑定的函数
@@ -31,7 +31,7 @@ var eventUtil = {
 		}
 	},
 	/**
-	 * @description 删除句柄
+	 * @description 删除事件
 	 * @param {element} 删除事件的元素
 	 * @param {type} 事件类型
 	 * @param {handler} 需要删除的函数
@@ -48,40 +48,40 @@ var eventUtil = {
 		}
 	},
 	/**
-		* @description 获取event
-		* @param {event} event对象
-		* @Date 20150731
-		* @author YouNoFish
-		**/
+	* @description 获取event
+	* @param {event} event对象
+	* @Date 20150731
+	* @author YouNoFish
+	**/
 	getEvent: function (event) {
 		return event ? event : window.event;
 	},
 	/**
-		* @description 获取event.type
-		* @param {event} event对象
-		* @Date 20150930
-		* @author YouNoFish
-		**/
+	* @description 获取event.type
+	* @param {event} event对象
+	* @Date 20150930
+	* @author YouNoFish
+	**/
 	getType: function (event) {
 		var e = window.event || event;
 		return e.type;
 	},
 	/**
-		* @description 获取事件源
-		* @param {event} event对象
-		* @Date 20150930
-		* @author YouNoFish
-		**/
+	* @description 获取事件源
+	* @param {event} event对象
+	* @Date 20150930
+	* @author YouNoFish
+	**/
 	getElement: function (event) {
 		var e = window.event || event;
 		return e.target || e.srcElement;
 	},
 	/**
-		* @description 阻止浏览器默认行为
-		* @param {event} event对象
-		* @Date 20150930
-		* @author YouNoFish
-		**/
+	* @description 阻止浏览器默认行为
+	* @param {event} event对象
+	* @Date 20150930
+	* @author YouNoFish
+	**/
 	preventDefault: function (event) {
 		var e = window.event || event;
 		if (e.preventDefault) {
@@ -91,11 +91,11 @@ var eventUtil = {
 		}
 	},
 	/**
-		* @description 阻止冒泡
-		* @param {event} event对象
-		* @Date 20150930
-		* @author YouNoFish
-		**/
+	* @description 阻止冒泡
+	* @param {event} event对象
+	* @Date 20150930
+	* @author YouNoFish
+	**/
 	stopPropagation: function (event) {
 		var e = window.event || event;
 		if (e.stopPropagation) {
@@ -105,11 +105,11 @@ var eventUtil = {
 		}
 	},
 	/**
-	  * @description 禁止用F5键 （兼容IE和firefox）
-	  * @param {e} event对象
-	  * @Date 20150731
-	  * @author YouNoFish
-	  **/
+	* @description 禁止用F5键 （兼容IE和firefox）
+	* @param {e} event对象
+	* @Date 20150731
+	* @author YouNoFish
+	**/
 	stopF5: function (e) {
 		e = window.event || e;
 		var keycode = e.keyCode || e.which;
@@ -147,31 +147,31 @@ var eventUtil = {
 }
 
 /**
- * @description cookie相关的方法 （新增Cookie ，获取Cookie， 删除Cookie ）
+ * @description cookie相关的方法
  * @author YouNoFish
  * @Date 20150730
  * @version 0.2.5
  * */
 var cookieUtil = {
 	/**
-      * @description 设置cookie
-      * @param {name} cookie名称
-      * @param {value} cookie值
-      * @param {day} 有效期（天）
-      * @Date 20150731
-      * @author YouNoFish
-      **/
+	* @description 设置cookie
+	* @param {name} cookie名称
+	* @param {value} cookie值
+	* @param {day} 有效期（天）
+	* @Date 20150731
+	* @author YouNoFish
+	**/
 	setCookie: function (name, value, day) {
 		var oDate = new Date();
 		oDate.setDate(oDate.getDate() + day);
 		document.cookie = name + '=' + value + ';expires=' + oDate;
 	},
 	/**
-      * @description 获取cookie
-      * @param {name} cookie名称
-      * @Date 20150730
-      * @author YouNoFish
-      **/
+	 * @description 获取cookie
+	* @param {name} cookie名称
+	* @Date 20150730
+	* @author YouNoFish
+	**/
 	getCookie: function (name) {
 		var oCookie = document.cookie.split('; ');
 		for (var i = 0, len = oCookie.length; i < len; i++) {
@@ -183,11 +183,11 @@ var cookieUtil = {
 		return '';
 	},
 	/**
-      * @description 删除cookie
-      * @param {name} cookie名称
-      * @Date 20150731
-      * @author YouNoFish
-      **/
+	* @description 删除cookie
+	* @param {name} cookie名称
+	* @Date 20150731
+	* @author YouNoFish
+	**/
 	delCookie: function (name) {
 		setCookie(name, 1, -1);
 	}
@@ -210,12 +210,12 @@ var commonUtil = {
 		return document.getElementById(eleId);
 	},
 	/**
-      * @description 通过父级id和类名获取元素
-      * @param {fatherId} 查找元素的父元素id
-      * @param {className} 查找元素的类名
-      * @Date 20150731
-      * @author YouNoFish
-      **/
+	* @description 通过父级id和类名获取元素
+	* @param {fatherId} 查找元素的父元素id
+	* @param {className} 查找元素的类名
+	* @Date 20150731
+	* @author YouNoFish
+	**/
 	getByClass: function (fatherId, className) {
 		var oFather = document.getElementById(fatherId);
 		var eles = oFather.getElementsByTagName("*");
@@ -343,13 +343,13 @@ var commonUtil = {
 		return result;
 	},
 	/**
-	  *  @description  在目标节点后插入新元素
-	  *  @Date 20160122
-	  *  @author YouNoFish
-	  *  @param {newElement} 新元素节点
-	  *  @param {targetElement} 目标节点
-	  *  @return 
-	  */
+	*  @description  在目标节点后插入新元素
+	*  @Date 20160122
+	*  @author YouNoFish
+	*  @param {newElement} 新元素节点
+	*  @param {targetElement} 目标节点
+	*  @return 
+	*/
 	insertAfter: function (newElement, targetElement) {
 		var parent = targetElement.parentNode;
 		if (parent.lastChild == targetElement) {
@@ -362,13 +362,13 @@ var commonUtil = {
 		}
 	},
 	/**
-	  *  @description  字符串格式化
-	  *  @Date 20160622
-	  *  @author YouNoFish
-	  *  @param {str} 字符串
-	  *  @param {params} 格式化的参数 
-	  *  @return 
-	  */
+	*  @description  字符串格式化
+	*  @Date 20160622
+	*  @author YouNoFish
+	*  @param {str} 字符串
+	*  @param {params} 格式化的参数 
+	*  @return 
+	*/
 	strFormat: function () {
 		if (arguments == undefined || arguments.length <= 1) {
 			console.log("参数非法！");
@@ -419,7 +419,12 @@ var commonUtil = {
 		return timeStr;
 	},
 
-	//截取字符串
+	/**
+	*  @description  根据长度截取字符串
+	*  @param {_str} 字符串
+	*  @param {_length} 截取后剩余的长度
+	*  @return timeStr
+	*/
 	cutStr: function (_str, _length) {
 		if (_str.length <= _length) {
 			return _str;

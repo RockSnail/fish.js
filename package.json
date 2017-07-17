@@ -1,10 +1,14 @@
 {
   "name": "fish.js",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "a easy , simple and usual js,help developers reduce operations",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YouNOFish/fish.js.git"
   },
   "author": "YouNoFish",
   "license": "MIT"
