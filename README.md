@@ -15,11 +15,11 @@
     具体使用则单独调用各个对象的方法
 
     /**
-	 * @description 添加事件
-	 * @param {element} 添加事件的元素
-	 * @param {type} 事件类型
-	 * @param {handler} 绑定的函数
-	 **/
+	* @description 添加事件
+	* @param {element} 添加事件的元素
+	* @param {type} 事件类型
+	* @param {handler} 绑定的函数
+	**/
     fish.eventUtil.addHandler(element, type, handler);
 
     /**
